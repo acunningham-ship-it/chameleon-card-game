@@ -41,12 +41,12 @@ const PALETTE = [
   [155, 93, 229],  // purple
 ];
 const lerp = (a, b, t) => Math.round(a + (b - a) * t);
-function accentAt(p) {
+function rgbAt(p) {
   const seg = (PALETTE.length - 1) * Math.max(0, Math.min(1, p));
   const i = Math.min(Math.floor(seg), PALETTE.length - 2);
   const t = seg - i;
   const a = PALETTE[i], b = PALETTE[i + 1];
-  return `rgb(${lerp(a[0], b[0], t)},${lerp(a[1], b[1], t)},${lerp(a[2], b[2], t)})`;
+  return [lerp(a[0], b[0], t), lerp(a[1], b[1], t), lerp(a[2], b[2], t)];
 }
 const progressBar = document.getElementById('progress');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -58,7 +58,12 @@ function onScroll() {
     const h = document.documentElement;
     const max = h.scrollHeight - h.clientHeight;
     const p = max > 0 ? h.scrollTop / max : 0;
-    if (!reduceMotion) h.style.setProperty('--accent', accentAt(p));
+    if (!reduceMotion) {
+      const [r, g, b] = rgbAt(p);
+      h.style.setProperty('--accent', `rgb(${r},${g},${b})`);
+      h.style.setProperty('--accent-wash', `rgba(${r},${g},${b},0.10)`);
+      h.style.setProperty('--accent-soft', `rgba(${r},${g},${b},0.22)`);
+    }
     progressBar.style.width = (p * 100) + '%';
     ticking = false;
   });

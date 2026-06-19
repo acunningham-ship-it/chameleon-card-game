@@ -5,6 +5,8 @@
   --ink:#16162a;  --ink-soft:#4a4a63; --line:#ececf3;
   --bg:#ffffff;   --bg-alt:#f7f7fb;  --bg-dark:#16162a;
   --accent:#ff4d5e;                  /* shifts through the 6 colors as you scroll (set by JS) */
+  --accent-wash:rgba(255,77,94,.10); /* faint page-wide tint (set by JS) */
+  --accent-soft:rgba(255,77,94,.22); /* stronger tint for the hero glow (set by JS) */
   --radius:18px;  --radius-sm:12px;
   --shadow:0 18px 40px -18px rgba(22,22,42,.28);
   --shadow-sm:0 8px 24px -12px rgba(22,22,42,.22);
@@ -51,8 +53,8 @@ a { text-decoration:none; color:inherit; }
 .eyebrow--center { text-align:center; }
 
 /* scroll-progress color bar — the chameleon "changing color" cue */
-.progress { position:fixed; top:0; left:0; height:4px; width:0; z-index:60;
-  background:var(--accent); box-shadow:0 0 14px var(--accent); transition:background-color .25s linear; }
+.progress { position:fixed; top:0; left:0; height:5px; width:0; z-index:60;
+  background:var(--accent); box-shadow:0 0 16px var(--accent); transition:background-color .2s linear; }
 
 /* ---- nav ---- */
 .nav { position:sticky; top:0; z-index:50; background:rgba(255,255,255,.85);
@@ -70,7 +72,7 @@ a { text-decoration:none; color:inherit; }
 
 /* ---- hero ---- */
 .hero { position:relative; overflow:hidden; padding:clamp(3rem,7vw,6rem) 0 clamp(4rem,9vw,7rem);
-  background:radial-gradient(1200px 500px at 80% -10%, #fff5f0, transparent), var(--bg-alt); }
+  background:radial-gradient(1200px 620px at 78% -12%, var(--accent-soft), transparent 60%), var(--bg-alt); }
 .hero__inner { display:grid; grid-template-columns:1.05fr .95fr; gap:3rem; align-items:center; }
 .hero__title { font-size:clamp(2.6rem,6vw,4.4rem); font-weight:800; }
 .hero__sub { font-size:clamp(1.05rem,2.2vw,1.25rem); color:var(--ink-soft); max-width:34ch; margin:1.4rem 0; }
@@ -107,7 +109,7 @@ a { text-decoration:none; color:inherit; }
 
 /* ---- sections ---- */
 .section { padding:clamp(3.5rem,8vw,6rem) 0; }
-.section--alt { background:var(--bg-alt); }
+.section--alt { background:linear-gradient(var(--accent-wash), var(--accent-wash)), var(--bg-alt); }
 .section__head { max-width:620px; margin:0 auto clamp(2rem,5vw,3.5rem); text-align:center; }
 .section__head h2 { font-size:clamp(2rem,4.5vw,3rem); }
 .lede { color:var(--ink-soft); font-size:1.1rem; margin-top:.8rem; }
