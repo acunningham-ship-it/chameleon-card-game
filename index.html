@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chameleon — The Color-Matching Card Game</title>
+  <meta name="description" content="Chameleon is the fast, colorful family card game where you race to turn your whole hand to your color. Easy to learn, impossible to put down. 2–6 players, ages 8+." />
+  <meta property="og:title" content="Chameleon — The Color-Matching Card Game" />
+  <meta property="og:description" content="Race to match your colors, outwit your family, win. 2–6 players, ages 8+, ~20 min." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <!-- NAV -->
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a href="#top" class="logo" aria-label="Chameleon home">
+        <span class="logo__dot"></span><span class="logo__text">Chameleon</span>
+      </a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#how">How to Play</a>
+        <a href="#box">What's Inside</a>
+        <a href="#buy">Buy</a>
+        <a href="#reviews">Reviews</a>
+      </nav>
+      <div class="nav__actions">
+        <a href="#buy" class="btn btn--solid btn--sm">Get the Game</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__copy reveal">
+        <p class="eyebrow">The family card game that keeps changing</p>
+        <h1 class="hero__title">Match your colors.<br /><span class="shift">Outwit</span> everyone.</h1>
+        <p class="hero__sub">Race to turn your whole hand to your color before anyone else figures out the game. Easy to learn, impossible to put down.</p>
+        <div class="hero__meta">
+          <span>👥 2–6 players</span><span>🎂 Ages 8+</span><span>⏱ ~20 min</span>
+        </div>
+        <div class="hero__cta">
+          <a href="#buy" class="btn btn--solid">Get the Game — $20</a>
+          <a href="#how" class="btn btn--ghost">See how it works</a>
+        </div>
+      </div>
+      <div class="hero__art" aria-hidden="true">
+        <div class="fan">
+          <div class="card c-red"><span>R</span></div>
+          <div class="card c-orange"><span>O</span></div>
+          <div class="card c-yellow"><span>Y</span></div>
+          <div class="card c-green"><span>G</span></div>
+          <div class="card c-blue"><span>B</span></div>
+          <div class="card c-purple"><span>P</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__wave"></div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <section class="strip">
+    <div class="container strip__inner">
+      <span>108 cards</span><span class="dot">•</span>
+      <span>2–6 players</span><span class="dot">•</span>
+      <span>Learn in 2 minutes</span><span class="dot">•</span>
+      <span>Family-owned &amp; made</span>
+    </div>
+  </section>
+
+  <!-- HOW TO PLAY -->
+  <section class="section" id="how">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow eyebrow--center">How it works</p>
+        <h2>Three steps. One winner.</h2>
+        <p class="lede">No long rulebook, no setup headache. Deal the cards and you're playing in under two minutes.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step__num">1</div>
+          <h3>Get your color</h3>
+          <p>Every player gets a hand of cards in a mix of colors. Your mission: turn them all into <em>your</em> color.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step__num">2</div>
+          <h3>Play &amp; swap</h3>
+          <p>Use Play Cards to change colors, swap hands, skip rivals, and flip the table when they least expect it.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step__num">3</div>
+          <h3>Match to win</h3>
+          <p>First to turn their whole hand to a single color takes the round. Best of the night takes bragging rights.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INSIDE -->
+  <section class="section section--alt" id="box">
+    <div class="container box__grid">
+      <div class="box__art reveal" aria-hidden="true">
+        <div class="deck">
+          <div class="deck__card c-purple"></div>
+          <div class="deck__card c-blue"></div>
+          <div class="deck__card c-green"></div>
+          <div class="deck__card c-yellow"></div>
+          <div class="deck__card c-orange"></div>
+          <div class="deck__card c-red"></div>
+        </div>
+      </div>
+      <div class="box__copy reveal">
+        <p class="eyebrow">What's in the box</p>
+        <h2>108 cards of color chaos</h2>
+        <ul class="features">
+          <li><strong>Color Cards</strong> — the heart of the game. Collect, match, and convert your way to a single color.</li>
+          <li><strong>Play Cards</strong> — special action cards that swap, skip, block, and turn the game on its head.</li>
+          <li><strong>Quick-start rules</strong> — learn it in one read, teach it in one minute.</li>
+          <li><strong>Built to last</strong> — premium, shuffle-proof card stock for game night after game night.</li>
+        </ul>
+        <a href="#buy" class="btn btn--solid">Pick your pack</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUY / PRICING -->
+  <section class="section" id="buy">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow eyebrow--center">Get yours</p>
+        <h2>Pick your pack</h2>
+        <p class="lede">One for the family, more for the party. Every deck is a full game.</p>
+      </div>
+      <div class="pricing">
+        <div class="price reveal">
+          <div class="price__top c-blue"></div>
+          <h3>Single Deck</h3>
+          <p class="price__amt">$20</p>
+          <p class="price__note">One complete game. Perfect to try it out.</p>
+          <ul>
+            <li>Full 108-card deck</li>
+            <li>2–6 players</li>
+            <li>Quick-start rules</li>
+          </ul>
+          <a href="#" class="btn btn--solid btn--block" data-buy="single">Add to cart</a>
+        </div>
+        <div class="price price--featured reveal">
+          <div class="ribbon">Most popular</div>
+          <div class="price__top c-green"></div>
+          <h3>Family Pack</h3>
+          <p class="price__amt">$36<span class="price__save">save $4</span></p>
+          <p class="price__note">Two decks — combine them for bigger groups.</p>
+          <ul>
+            <li>Two complete decks</li>
+            <li>Up to 12 players combined</li>
+            <li>Great gift</li>
+          </ul>
+          <a href="#" class="btn btn--solid btn--block" data-buy="double">Add to cart</a>
+        </div>
+        <div class="price reveal">
+          <div class="price__top c-purple"></div>
+          <h3>Party Pack</h3>
+          <p class="price__amt">$80<span class="price__save">save $20</span></p>
+          <p class="price__note">Five decks for big nights, clubs &amp; gifting.</p>
+          <ul>
+            <li>Five complete decks</li>
+            <li>Best value per deck</li>
+            <li>Perfect for events</li>
+          </ul>
+          <a href="#" class="btn btn--solid btn--block" data-buy="five">Add to cart</a>
+        </div>
+      </div>
+      <p class="pay">Secure checkout · Visa · Mastercard · Amex · Discover · PayPal · Apple Pay · Google Pay</p>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section section--alt" id="reviews">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow eyebrow--center">Game night approved</p>
+        <h2>Families can't stop playing</h2>
+      </div>
+      <div class="reviews">
+        <figure class="review reveal">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Our whole family learned it in one round and now it's every Friday. The kids beat me constantly."</blockquote>
+          <figcaption>— Placeholder review</figcaption>
+        </figure>
+        <figure class="review reveal">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Brought it to a party and it became <em>the</em> game of the night. Simple rules, brutal mind games."</blockquote>
+          <figcaption>— Placeholder review</figcaption>
+        </figure>
+        <figure class="review reveal">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Bought the party pack for gifts and kept one for myself. Easily our most-played card game."</blockquote>
+          <figcaption>— Placeholder review</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container cta__inner reveal">
+      <h2>Ready for game night?</h2>
+      <p>Grab a deck and turn the next hour into the best one of the week.</p>
+      <a href="#buy" class="btn btn--light">Get the Game</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#top" class="logo logo--light"><span class="logo__dot"></span><span class="logo__text">Chameleon</span></a>
+        <p>The color-matching card game for the whole family.</p>
+      </div>
+      <nav class="footer__links">
+        <a href="#how">How to Play</a>
+        <a href="#box">What's Inside</a>
+        <a href="#buy">Buy</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#" data-link="contact">Contact</a>
+        <a href="#" data-link="instagram">Instagram</a>
+      </nav>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> Chameleon Card Game. All rights reserved.</span>
+      <span class="footer__note">Concept redesign — not the live store.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
