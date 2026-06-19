@@ -4,9 +4,10 @@
   --green:#2fd07f; --blue:#3d9bff;  --purple:#9b5de5;
   --ink:#16162a;  --ink-soft:#4a4a63; --line:#ececf3;
   --bg:#ffffff;   --bg-alt:#f7f7fb;  --bg-dark:#16162a;
-  --accent:#ff4d5e;                  /* shifts through the 6 colors as you scroll (set by JS) */
+  --accent:#ff4d5e;                  /* vivid — used for DECORATIVE accents (set by JS) */
   --accent-wash:rgba(255,77,94,.10); /* faint page-wide tint (set by JS) */
   --accent-soft:rgba(255,77,94,.22); /* stronger tint for the hero glow (set by JS) */
+  --accent-text:#b7122a;             /* darkened — used wherever the accent is TEXT, ≥4.5:1 on white (set by JS) */
   --radius:18px;  --radius-sm:12px;
   --shadow:0 18px 40px -18px rgba(22,22,42,.28);
   --shadow-sm:0 8px 24px -12px rgba(22,22,42,.22);
@@ -44,12 +45,15 @@ a { text-decoration:none; color:inherit; }
 .btn--solid { background:var(--ink); color:#fff; }
 .btn--solid:hover { transform:translateY(-2px); box-shadow:var(--shadow-sm); }
 .btn--ghost { background:transparent; border-color:var(--line); color:var(--ink); }
-.btn--ghost:hover { border-color:var(--accent); color:var(--accent); transform:translateY(-2px); }
+.btn--ghost:hover { border-color:var(--accent-text); color:var(--accent-text); transform:translateY(-2px); }
+/* visible keyboard focus (WCAG 2.4.11) */
+:focus-visible { outline:3px solid var(--accent-text); outline-offset:3px; border-radius:6px; }
+.footer :focus-visible, .cta :focus-visible, .strip :focus-visible { outline-color:#fff; }
 .btn--light { background:#fff; color:var(--ink); }
 .btn--light:hover { transform:translateY(-2px); box-shadow:0 16px 36px -16px rgba(0,0,0,.5); }
 
 .eyebrow { font-family:'Poppins',sans-serif; font-weight:600; font-size:.82rem; letter-spacing:.12em;
-  text-transform:uppercase; color:var(--accent); margin-bottom:.7rem; transition:color .25s linear; }
+  text-transform:uppercase; color:var(--accent-text); margin-bottom:.7rem; transition:color .25s linear; }
 .eyebrow--center { text-align:center; }
 
 /* scroll-progress color bar — the chameleon "changing color" cue */
@@ -65,7 +69,7 @@ a { text-decoration:none; color:inherit; }
 .logo--light { color:#fff; }
 .nav__links { display:flex; gap:2rem; }
 .nav__links a { font-weight:500; color:var(--ink-soft); transition:color .15s; }
-.nav__links a:hover { color:var(--accent); }
+.nav__links a:hover { color:var(--accent-text); }
 .nav__actions { display:flex; align-items:center; gap:1rem; }
 .nav__toggle { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px; }
 .nav__toggle span { width:24px; height:2px; background:var(--ink); border-radius:2px; transition:.25s; }
@@ -118,7 +122,7 @@ a { text-decoration:none; color:inherit; }
 .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
 .step { background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:2rem;
   box-shadow:var(--shadow-sm); }
-.step__num { width:46px; height:46px; border-radius:14px; background:var(--accent); transition:background-color .25s linear;
+.step__num { width:46px; height:46px; border-radius:14px; background:var(--accent-text); transition:background-color .25s linear;
   color:#fff; font-family:'Poppins',sans-serif; font-weight:800;
   font-size:1.3rem; display:flex; align-items:center; justify-content:center; margin-bottom:1.1rem; }
 .step h3 { font-size:1.35rem; margin-bottom:.5rem; }

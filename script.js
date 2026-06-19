@@ -41,13 +41,24 @@ const PALETTE = [
   [155, 93, 229],  // purple
 ];
 const lerp = (a, b, t) => Math.round(a + (b - a) * t);
-function rgbAt(p) {
-  const seg = (PALETTE.length - 1) * Math.max(0, Math.min(1, p));
-  const i = Math.min(Math.floor(seg), PALETTE.length - 2);
+// darkened counterparts — used wherever the accent is TEXT (each ≥4.5:1 on white, WCAG AA)
+const PALETTE_TEXT = [
+  [183, 18, 42],   // dark red
+  [171, 88, 0],    // dark orange
+  [115, 84, 0],    // dark yellow
+  [0, 126, 72],    // dark green
+  [0, 89, 194],    // dark blue
+  [98, 44, 171],   // dark purple
+];
+function mix(pal, p) {
+  const seg = (pal.length - 1) * Math.max(0, Math.min(1, p));
+  const i = Math.min(Math.floor(seg), pal.length - 2);
   const t = seg - i;
-  const a = PALETTE[i], b = PALETTE[i + 1];
+  const a = pal[i], b = pal[i + 1];
   return [lerp(a[0], b[0], t), lerp(a[1], b[1], t), lerp(a[2], b[2], t)];
 }
+const rgbAt = (p) => mix(PALETTE, p);
+const textRgbAt = (p) => mix(PALETTE_TEXT, p);
 const progressBar = document.getElementById('progress');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 let ticking = false;
@@ -60,11 +71,13 @@ function onScroll() {
     const p = max > 0 ? h.scrollTop / max : 0;
     if (!reduceMotion) {
       const [r, g, b] = rgbAt(p);
+      const [tr, tg, tb] = textRgbAt(p);
       h.style.setProperty('--accent', `rgb(${r},${g},${b})`);
       h.style.setProperty('--accent-wash', `rgba(${r},${g},${b},0.10)`);
       h.style.setProperty('--accent-soft', `rgba(${r},${g},${b},0.22)`);
+      h.style.setProperty('--accent-text', `rgb(${tr},${tg},${tb})`);
+      progressBar.style.width = (p * 100) + '%';
     }
-    progressBar.style.width = (p * 100) + '%';
     ticking = false;
   });
 }
