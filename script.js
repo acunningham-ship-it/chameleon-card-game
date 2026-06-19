@@ -95,7 +95,7 @@ const STORE = {
   single: 'https://chameleoncardgame.com/products/chameleon-playing-cards',
   double: 'https://chameleoncardgame.com/products/chameleon-card-game-2-decks',
   five: 'https://chameleoncardgame.com/products/chameleon-card-game-5-decks',
-  instagram: 'https://instagram.com/', // TODO: real handle
+  instagram: 'https://www.instagram.com/chameleoncardgame',
   contact: 'https://chameleoncardgame.com/pages/contact',
 };
 
